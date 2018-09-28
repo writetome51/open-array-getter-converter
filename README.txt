@@ -3,4 +3,3 @@ The OpenArrayGetterConverter class is a dependency of the OpenArray class
 
 OpenArrayGetterConverter simply renames the built-in Array methods  .map()  and  .reduce()
 to  .each()  and  .toOne() , respectively.
-

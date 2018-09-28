@@ -13,7 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var OpenArrayContainer_1 = require("./OpenArrayContainer");
+var OpenArrayContainer_1 = require("@writetome51/open-array-container/OpenArrayContainer");
 var OpenArrayGetterConverter = /** @class */ (function (_super) {
     __extends(OpenArrayGetterConverter, _super);
     function OpenArrayGetterConverter(data) {

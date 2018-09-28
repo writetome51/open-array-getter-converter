@@ -1,4 +1,4 @@
-import { OpenArrayContainer } from './OpenArrayContainer';
+import { OpenArrayContainer } from '@writetome51/open-array-container/OpenArrayContainer';
 
 
 export class OpenArrayGetterConverter extends OpenArrayContainer {
