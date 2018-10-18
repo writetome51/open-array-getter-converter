@@ -2,7 +2,7 @@
   "name": "@writetome51/open-array-getter-converter",
   "version": "1.0.0",
   "description": "an array-manipulating typescript/javascript class with methods that return the array converted into something else.",
-  "main": "",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,6 +15,7 @@
   "author": "Steve Thompson",
   "license": "MIT",
   "dependencies": {
+	"basic-data-handling":"latest",
     "@writetome51/open-array-container": "latest"
   }
 }
