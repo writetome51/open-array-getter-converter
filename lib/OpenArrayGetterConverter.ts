@@ -22,7 +22,7 @@ export class OpenArrayGetterConverter extends OpenArrayContainer {
 	// Does the same thing as Array.map()
 	// Returns new array with each value in old array converted into something else.
 	each(mappingFunction): any[] {
-		errorIfNotFunction(reducingFunction);
+		errorIfNotFunction(mappingFunction);
 		return this.data.map(mappingFunction);
 	}
 
