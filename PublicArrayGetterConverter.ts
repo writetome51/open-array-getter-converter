@@ -1,8 +1,8 @@
-import { OpenArrayContainer } from '@writetome51/open-array-container/OpenArrayContainer';
+import { PublicArrayContainer } from '@writetome51/public-array-container/PublicArrayContainer';
 import { errorIfNotFunction } from 'basic-data-handling/errorIfNotFunction';
 
 
-export class OpenArrayGetterConverter extends OpenArrayContainer {
+export class PublicArrayGetterConverter extends PublicArrayContainer {
 
 
 	constructor(data = []) {

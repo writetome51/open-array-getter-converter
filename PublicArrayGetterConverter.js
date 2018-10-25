@@ -13,26 +13,26 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var OpenArrayContainer_1 = require("@writetome51/open-array-container/OpenArrayContainer");
+var PublicArrayContainer_1 = require("@writetome51/public-array-container/PublicArrayContainer");
 var errorIfNotFunction_1 = require("basic-data-handling/errorIfNotFunction");
-var OpenArrayGetterConverter = /** @class */ (function (_super) {
-    __extends(OpenArrayGetterConverter, _super);
-    function OpenArrayGetterConverter(data) {
+var PublicArrayGetterConverter = /** @class */ (function (_super) {
+    __extends(PublicArrayGetterConverter, _super);
+    function PublicArrayGetterConverter(data) {
         if (data === void 0) { data = []; }
         return _super.call(this, data) || this;
     }
     // These functions don't modify the array.  What they return depends on the function.
     // Does the same thing as Array.reduce(), but with a much better name.
-    OpenArrayGetterConverter.prototype.toOne = function (reducingFunction) {
+    PublicArrayGetterConverter.prototype.toOne = function (reducingFunction) {
         errorIfNotFunction_1.errorIfNotFunction(reducingFunction);
         return this.data.reduce(reducingFunction);
     };
     // Does the same thing as Array.map()
     // Returns new array with each value in old array converted into something else.
-    OpenArrayGetterConverter.prototype.each = function (mappingFunction) {
+    PublicArrayGetterConverter.prototype.each = function (mappingFunction) {
         errorIfNotFunction_1.errorIfNotFunction(mappingFunction);
         return this.data.map(mappingFunction);
     };
-    return OpenArrayGetterConverter;
-}(OpenArrayContainer_1.OpenArrayContainer));
-exports.OpenArrayGetterConverter = OpenArrayGetterConverter;
+    return PublicArrayGetterConverter;
+}(PublicArrayContainer_1.PublicArrayContainer));
+exports.PublicArrayGetterConverter = PublicArrayGetterConverter;
