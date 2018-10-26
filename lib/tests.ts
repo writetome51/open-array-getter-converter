@@ -1,4 +1,4 @@
-import { PublicArrayGetterConverter } from './PublicArrayGetterConverter';
+import { PublicArrayGetterConverter } from './index';
 
 
 let getConverted = new PublicArrayGetterConverter([1, 2, 3, 4]);
