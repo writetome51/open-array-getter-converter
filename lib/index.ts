@@ -14,7 +14,7 @@ export class PublicArrayGetterConverter extends PublicArrayContainer {
 
 	// Does the same thing as Array.reduce(), but with a much better name.
 	toOne(
-		reducingFunction: ((previousValue: any, currentValue: any, index?: number, array?: any[]) => any)
+		reducingFunction: ((previousValue: any, currentValue: any, index?, array?) => any)
 	): any {
 		errorIfNotFunction(reducingFunction);
 		return this.data.reduce(reducingFunction);
@@ -23,7 +23,7 @@ export class PublicArrayGetterConverter extends PublicArrayContainer {
 
 	// Does the same thing as Array.map()
 	// Returns new array with each value in old array converted into something else.
-	each(mappingFunction: ((item: any, index?: number, array?: any[]) => any)): any[] {
+	each(mappingFunction: ((item, index?, array?) => any)): any[] {
 		errorIfNotFunction(mappingFunction);
 		return this.data.map(mappingFunction);
 	}
