@@ -18,7 +18,7 @@ To instantiate, pass the actual array it will contain to its constructor:
 
     let getConverted = new PublicArrayGetterConverter( [item1, item2, item3,...] );
 
-You can reset the array by accessing the class 'data' property:
+You can reset the array by accessing the class `.data` property:
 
     getConverted.data = [1,2,3,4,...];
 

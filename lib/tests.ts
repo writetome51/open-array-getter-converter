@@ -1,4 +1,5 @@
 import { PublicArrayGetterConverter } from './index';
+import { arraysMatch } from '@writetome51/arrays-match';
 
 
 let getConverted = new PublicArrayGetterConverter([1, 2, 3, 4]);
@@ -6,7 +7,7 @@ let getConverted = new PublicArrayGetterConverter([1, 2, 3, 4]);
 let result: any = getConverted.each((item) => {
 	return item * 2;
 });
-if (result.length === 4 && result[0] === 2) console.log('test 1 passed');
+if (arraysMatch(result, [2, 4, 6, 8])) console.log('test 1 passed');
 else console.log('test 1 FAILED');
 
 
