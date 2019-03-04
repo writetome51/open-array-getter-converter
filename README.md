@@ -3,51 +3,49 @@
 An array-manipulating Typescript/Javascript class with methods that return the array   
 converted into something else.  None of the methods modify the array.
 
-## Installation
-
-You must have npm installed first. Then, in the command line:
-
-    npm install @writetome51/public-array-getter-converter
-
-## Loading
-
-    // if using Typescript:
-    import {PublicArrayGetterConverter} from '@writetome51/public-array-getter-converter';
-    // if using ES5 Javascript:
-    var PublicArrayGetterConverter = 
-            require('@writetome51/public-array-getter-converter').PublicArrayGetterConverter;
-
 PublicArrayGetterConverter has the built-in Array methods  `.map()`  and  `.reduce()` ,  
 but renamed to  `.each()`  and  `.toOne()` , respectively.
 
-To instantiate, pass the actual array it will contain to its constructor:
+## Constructor
+```
+constructor(data? = []) // 'data' becomes the array it contains.
+```
 
-    let getConverted = new PublicArrayGetterConverter( [item1, item2, item3,...] );
-
-You can reset the array by accessing the class `.data` property:
-
-    getConverted.data = [1,2,3,4,...];
+You can also reset the array by accessing the class `.data` property:
+```
+this.data = [1,2,3,4];
+```
 
 
 ## Properties
+```
+data : any[]  // the actual array
 
-	data : any[] (read-writable) // the actual array
+className: string (read-only)
+    // Not important.  Inherited from BaseClass.
+```
 
-	className: string (read-only)
 
 ## Methods
+<details>
+<summary>view methods</summary>
+
+
 ```	
 each(
-    mappingFunction: ((item: any, index?: number, array?: any[]) => any)
+    mappingFunction: ((item: any, index?, array?) => any)
 ): any[]
     // Does the same thing as Array.map()
     // Returns new array with each value in old array converted into something else.
 
 toOne(
-    reducingFunction: ((previousValue: any, currentValue: any, index?: number, array?: any[]) => any)
+    reducingFunction: ((previousValue: any, currentValue: any, index?, array?) => any)
 ): any
     // Does the same thing as Array.reduce(), but with a much better name.
-
+``` 
+The methods below are not important to know about in order to use this  
+class.  They're inherited from [BaseClass](https://github.com/writetome51/typescript-base-class#baseclass) .
+``` 
 protected   _createGetterAndOrSetterForEach(
 		propertyNames: string[],
 		configuration: IGetterSetterConfiguration
@@ -86,8 +84,10 @@ protected   _runMethod_and_returnThis(
     additionalAction?: Function // takes the result returned by method as an argument.
 ) : this
 ```
+</details>
 
-Usage Examples:
+
+## Usage Examples:
 
     getConverted.data = [1,2,3,4];  
     let result = getConverted.each((item, currentIndex, theArray) => {
@@ -105,6 +105,21 @@ Usage Examples:
 ## Inheritance Chain
 
 PublicArrayGetterConverter<--[PublicArrayContainer](https://github.com/writetome51/public-array-container#publicarraycontainer)<--[BaseClass](https://github.com/writetome51/typescript-base-class#baseclass)
+
+
+## Installation
+
+You must have npm installed first. Then, in the command line:
+
+    npm install @writetome51/public-array-getter-converter
+
+## Loading
+
+    // if using Typescript:
+    import {PublicArrayGetterConverter} from '@writetome51/public-array-getter-converter';
+    // if using ES5 Javascript:
+    var PublicArrayGetterConverter = 
+            require('@writetome51/public-array-getter-converter').PublicArrayGetterConverter;
 
 
 ## License
