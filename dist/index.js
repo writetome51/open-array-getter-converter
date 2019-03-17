@@ -23,9 +23,11 @@ var PublicArrayGetterConverter = /** @class */ (function (_super) {
     }
     // These functions don't modify the array.  What they return depends on the function.
     // Does the same thing as Array.reduce(), but with a much better name.
-    PublicArrayGetterConverter.prototype.toOne = function (reducingFunction) {
+    PublicArrayGetterConverter.prototype.toOne = function (reducingFunction, initialValue) {
+        var _a;
         errorIfNotFunction_1.errorIfNotFunction(reducingFunction);
-        return this.data.reduce(reducingFunction);
+        // @ts-ignore
+        return (_a = this.data).reduce.apply(_a, arguments);
     };
     // Does the same thing as Array.map()
     // Returns new array with each value in old array converted into something else.

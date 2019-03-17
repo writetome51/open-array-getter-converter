@@ -16,10 +16,12 @@ export class PublicArrayGetterConverter extends PublicArrayContainer {
 	// Does the same thing as Array.reduce(), but with a much better name.
 
 	toOne(
-		reducingFunction: ((previousValue: any, currentValue: any, index?, array?) => any)
+		reducingFunction: ((total: any, currentValue: any, currentIndex?, array?) => any),
+		initialValue?
 	): any {
 		errorIfNotFunction(reducingFunction);
-		return this.data.reduce(reducingFunction);
+		// @ts-ignore
+		return this.data.reduce(...arguments);
 	}
 
 

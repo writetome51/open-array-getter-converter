@@ -39,7 +39,8 @@ each(
     // Returns new array with each value in old array converted into something else.
 
 toOne(
-    reducingFunction: ((previousValue: any, currentValue: any, index?, array?) => any)
+    reducingFunction: ((total: any, currentValue: any, currentIndex?: number, array?: any[]) => any),
+    initialValue?: any
 ): any
     // Does the same thing as Array.reduce(), but with a much better name.
 ``` 
