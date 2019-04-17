@@ -13,8 +13,8 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
+var error_if_not_function_1 = require("error-if-not-function");
 var public_array_container_1 = require("@writetome51/public-array-container");
-var errorIfNotFunction_1 = require("basic-data-handling/errorIfNotFunction");
 var PublicArrayGetterConverter = /** @class */ (function (_super) {
     __extends(PublicArrayGetterConverter, _super);
     function PublicArrayGetterConverter(data) {
@@ -25,14 +25,14 @@ var PublicArrayGetterConverter = /** @class */ (function (_super) {
     // Does the same thing as Array.reduce(), but with a much better name.
     PublicArrayGetterConverter.prototype.toOne = function (reducingFunction, initialValue) {
         var _a;
-        errorIfNotFunction_1.errorIfNotFunction(reducingFunction);
+        error_if_not_function_1.errorIfNotFunction(reducingFunction);
         // @ts-ignore
         return (_a = this.data).reduce.apply(_a, arguments);
     };
     // Does the same thing as Array.map()
     // Returns new array with each value in old array converted into something else.
     PublicArrayGetterConverter.prototype.each = function (mappingFunction) {
-        errorIfNotFunction_1.errorIfNotFunction(mappingFunction);
+        error_if_not_function_1.errorIfNotFunction(mappingFunction);
         return this.data.map(mappingFunction);
     };
     return PublicArrayGetterConverter;

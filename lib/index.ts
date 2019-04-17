@@ -1,5 +1,5 @@
+import { errorIfNotFunction } from 'error-if-not-function';
 import { PublicArrayContainer } from '@writetome51/public-array-container';
-import { errorIfNotFunction } from 'basic-data-handling/errorIfNotFunction';
 
 
 export class PublicArrayGetterConverter extends PublicArrayContainer {
