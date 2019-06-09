@@ -7,22 +7,21 @@ PublicArrayGetterConverter has the built-in Array methods  `.map()`  and  `.redu
 but renamed to  `.each()`  and  `.toOne()` , respectively.
 
 ## Constructor
-```
-constructor(data? = []) // 'data' becomes the array it contains.
+```ts
+constructor(data? = []) //  'data' is assigned to this.data .
 ```
 
-You can also reset the array by accessing the class `.data` property:
-```
+You can reset the array by accessing the class `.data` property:
+```ts
 this.data = [1,2,3,4];
 ```
 
 
 ## Properties
-```
+```ts
 data : any[]  // the actual array
 
 className: string (read-only)
-    // Not important.  Inherited from BaseClass.
 ```
 
 
@@ -30,8 +29,7 @@ className: string (read-only)
 <details>
 <summary>view methods</summary>
 
-
-```	
+```ts
 each(
     mappingFunction: ((item: any, index?, array?) => any)
 ): any[]
@@ -46,7 +44,7 @@ toOne(
 ``` 
 The methods below are not important to know about in order to use this  
 class.  They're inherited from [BaseClass](https://github.com/writetome51/typescript-base-class#baseclass) .
-``` 
+```ts
 protected   _createGetterAndOrSetterForEach(
 		propertyNames: string[],
 		configuration: IGetterSetterConfiguration
@@ -78,30 +76,35 @@ protected   _returnThis_after(voidExpression: any) : this
     // voidExpression is executed, then function returns this.
     // Even if voidExpression returns something, the returned data isn't used.
 
-protected   _runMethod_and_returnThis(
-    callingObject, 
-    method: Function, 
-    methodArgs: any[], 
-    additionalAction?: Function // takes the result returned by method as an argument.
-) : this
+protected   _errorIfPropertyHasNoValue(
+                property: string, // can contain dot-notation, i.e., 'property.subproperty'
+                propertyNameInError? = ''
+            ) : void
+    // If value of this[property] is undefined or null, it triggers fatal error:
+    // `The property "${propertyNameInError}" has no value.`
 ```
 </details>
 
 
 ## Usage Examples:
+<details>
+<summary>view examples</summary>
 
-    getConverted.data = [1,2,3,4];  
-    let result = getConverted.each((item, currentIndex, theArray) => {
+```ts
+getConverted.data = [1,2,3,4];  
+let result = getConverted.each((item, currentIndex, theArray) => {
 	    return item * 2;
-    });
-    // result is now [2,4,6,8]
+});
+// result is now [2,4,6,8]
 
-    // getConverted.data is still [1,2,3,4]
+// getConverted.data is still [1,2,3,4]
 
-    result = getConverted.toOne((a, b, currentIndex, theArray) => {
+result = getConverted.toOne((a, b, currentIndex, theArray) => {
 	    return a * b;
-    });
-    // result is now 24
+});
+// result is now 24
+```
+</details>
 
 ## Inheritance Chain
 
@@ -110,18 +113,16 @@ PublicArrayGetterConverter<--[PublicArrayContainer](https://github.com/writetome
 
 ## Installation
 
-You must have npm installed first. Then, in the command line:
-
-    npm install @writetome51/public-array-getter-converter
+`npm i  @writetome51/public-array-getter-converter`
 
 ## Loading
-
-    // if using Typescript:
-    import {PublicArrayGetterConverter} from '@writetome51/public-array-getter-converter';
-    // if using ES5 Javascript:
-    var PublicArrayGetterConverter = 
-            require('@writetome51/public-array-getter-converter').PublicArrayGetterConverter;
-
+```ts
+// if using Typescript:
+import {PublicArrayGetterConverter} from '@writetome51/public-array-getter-converter';
+// if using ES5 Javascript:
+var PublicArrayGetterConverter = 
+        require('@writetome51/public-array-getter-converter').PublicArrayGetterConverter;
+```
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)

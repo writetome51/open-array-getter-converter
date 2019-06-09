@@ -5,11 +5,6 @@ import { PublicArrayContainer } from '@writetome51/public-array-container';
 export class PublicArrayGetterConverter extends PublicArrayContainer {
 
 
-	constructor(data: any[] = []) {
-		super(data);
-	}
-
-
 	// These functions don't modify the array.  What they return depends on the function.
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@writetome51/public-array-getter-converter",
-  "version": "2.0.3",
+  "version": "3.0.0",
   "description": "An array-manipulating typescript/javascript class with methods that return the array converted into something else.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -26,10 +26,10 @@
   },
   "homepage": "https://github.com/writetome51/public-array-getter-converter#readme",
   "devDependencies": {
-    "@writetome51/arrays-match": "~1.0.6"
+    "@writetome51/arrays-match": "^1.0.6"
   },
   "dependencies": {
-    "error-if-not-function": "~1.0.0",
-    "@writetome51/public-array-container": "~2.0.3"
+    "error-if-not-function": "^1.0.0",
+    "@writetome51/public-array-container": "^3.0.0"
   }
 }
