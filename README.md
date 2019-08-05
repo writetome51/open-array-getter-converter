@@ -13,7 +13,7 @@ constructor(data? = []) //  'data' is assigned to this.data .
 
 When creating an instance, it's recommended you name the instance in a verb-form  
 of the class name.  Example:
-```
+```ts
 let getUsersConverted = new PublicArrayGetterConverter(users);
 let combinedUser = getUsersConverted.toOne(fnArg);
 let convertedUsers = getUsersConverted.each(fnArg);
