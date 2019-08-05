@@ -41,4 +41,3 @@ try {
 }
 if (errorTriggered) console.log('test 5 passed');
 else console.log('test 5 FAILED');
-

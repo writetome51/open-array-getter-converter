@@ -1,7 +1,7 @@
 {
   "name": "@writetome51/public-array-getter-converter",
-  "version": "3.0.0",
-  "description": "An array-manipulating typescript/javascript class with methods that return the array converted into something else.",
+  "version": "3.0.1",
+  "description": "An array-manipulating Typescript/Javascript class with alternative methods to Array.map and Array.reduce",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -29,7 +29,6 @@
     "@writetome51/arrays-match": "^1.0.6"
   },
   "dependencies": {
-    "error-if-not-function": "^1.0.0",
     "@writetome51/public-array-container": "^3.0.0"
   }
 }

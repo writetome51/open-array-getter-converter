@@ -11,6 +11,14 @@ but renamed to  `.each()`  and  `.toOne()` , respectively.
 constructor(data? = []) //  'data' is assigned to this.data .
 ```
 
+When creating an instance, it's recommended you name the instance in a verb-form  
+of the class name.  Example:
+```
+let getUsersConverted = new PublicArrayGetterConverter(users);
+let combinedUser = getUsersConverted.toOne(fnArg);
+let convertedUsers = getUsersConverted.each(fnArg);
+```
+
 You can reset the array by accessing the class `.data` property:
 ```ts
 this.data = [1,2,3,4];
@@ -31,13 +39,13 @@ className: string (read-only)
 
 ```ts
 each(
-    mappingFunction: ((item: any, index?, array?) => any)
+    mappingFunction: (item, index?, array?) => any
 ): any[]
     // Does the same thing as Array.map()
     // Returns new array with each value in old array converted into something else.
 
 toOne(
-    reducingFunction: ((total: any, currentValue: any, currentIndex?: number, array?: any[]) => any),
+    reducingFunction: (total: any,  item: any,  index?,  array?) => any,
     initialValue?: any
 ): any
     // Does the same thing as Array.reduce(), but with a much better name.
@@ -91,18 +99,15 @@ protected   _errorIfPropertyHasNoValue(
 <summary>view examples</summary>
 
 ```ts
-getConverted.data = [1,2,3,4];  
-let result = getConverted.each((item, currentIndex, theArray) => {
-	    return item * 2;
-});
-// result is now [2,4,6,8]
+let getNumbersConverted = new PublicArrayGetterConverter([1,2,3,4]);
 
-// getConverted.data is still [1,2,3,4]
+getNumbersConverted.each((item) => item * 2);
+// -->  [2,4,6,8]
 
-result = getConverted.toOne((a, b, currentIndex, theArray) => {
-	    return a * b;
-});
-// result is now 24
+// getNumbersConverted.data is still [1,2,3,4]
+
+getNumbersConverted.toOne((product, currentItem) => product * currentItem);
+// -->  24
 ```
 </details>
 
